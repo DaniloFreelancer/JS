@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 7</title>
+  </head>
+  <body style="background-color: #151922; color: white">
+    <h1 style="display: flex; justify-content: center; align-items: center">
+      Задача 6. З клавіатури вводяться вартість товару та кількість одиниць 3
+      товарів. Обчислити вартість кожного товару окремо та загальну вартість.
+      Вивести чек (як у супермаркеті) використовуючи елементи розмітки.
+    </h1>
+    <div
+      class="products"
+      style="width: 340px; padding: 10px; border: 1px solid white"
+    >
+      <div
+        class="products__block"
+        style="padding: 5px; border-bottom: 1px solid white"
+      >
+        <div style="font-weight: 700" class="products__title">Товар 1</div>
+        <div class="products__item">
+          <span id="worth-01"></span> x <span id="number-01"></span> шт.
+        </div>
+        <div class="products__result">
+          Ціна за перший товар: <span id="result-01"></span> грн.
+        </div>
+      </div>
+      <div
+        class="products__block"
+        style="padding: 5px; border-bottom: 1px solid white"
+      >
+        <div style="font-weight: 700" class="products__title">Товар 2</div>
+        <div class="products__item">
+          <span id="worth-02"></span> x <span id="number-02"></span> шт.
+        </div>
+        <div class="products__result">
+          Ціна за другий товар: <span id="result-02"></span> грн.
+        </div>
+      </div>
+      <div
+        class="products__block"
+        style="padding: 5px; border-bottom: 1px solid white"
+      >
+        <div style="font-weight: 700" class="products__title">Товар 3</div>
+        <div class="products__item">
+          <span id="worth-03"></span> x <span id="number-03"></span> шт.
+        </div>
+        <div class="products__result">
+          Ціна за третій товар: <span id="result-03"></span> грн.
+        </div>
+      </div>
+      <h3>Загальна вартість товарів: <span id="total-cost"></span> грн.</h3>
+    </div>
+    <script src="./scripts/jsTask07.js"></script>
+  </body>
+</html>
