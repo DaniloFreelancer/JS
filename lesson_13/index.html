@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./scripts/script.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Main</title>
+  </head>
+  <style>
+    * li:not(:last-child) {
+      margin-bottom: 40px;
+    }
+    a {
+      color: salmon;
+      position: relative;
+      text-decoration: none;
+    }
+    a::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: rgb(255, 149, 138);
+      transition: all 0.3s;
+    }
+    @media (any-hover: hover) {
+      a:hover::before {
+        width: 100%;
+        left: 0;
+      }
+    }
+  </style>
+  <body style="font-family: Roboto, sans-serif; background-color: #c9c9c9">
+    <h1 class="title-type" data-text="ДОМАШНЄ ЗАВДАННЯ №13"></h1>
+    <ul style="font-size: 30px">
+      <li>
+        <a href="./task01/index.html" target="_blank">01</a>
+      </li>
+      <li>
+        <a href="./task02/index.html" target="_blank">02</a>
+      </li>
+      <li>
+        <a href="./task03/index.html" target="_blank">03</a>
+      </li>
+      <li>
+        <a href="./task04/index.html" target="_blank">04</a>
+      </li>
+      <li>
+        <a href="./task05/index.html" target="_blank">05</a>
+      </li>
+      <li>
+        <a href="./task06/index.html" target="_blank">06</a>
+      </li>
+      <li>
+        <a href="./task07/index.html" target="_blank">07</a>
+      </li>
+      <li>
+        <a href="./task08/index.html" target="_blank">08</a>
+      </li>
+    </ul>
+  </body>
+</html>
