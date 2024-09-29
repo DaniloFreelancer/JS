@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2</title>
+  </head>
+  <style>
+    .form {
+      width: 300px;
+    }
+    .form__item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .form__item:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  </style>
+  <body>
+    <form action="#" class="form">
+      <div class="form__item">
+        <label for="grn">Сума в гривнях</label>
+        <input type="number" name="grn-sum" id="grn" value="0" />
+      </div>
+
+      <button type="button" class="form__convert-button">Конвертувати</button>
+      <hr />
+      <div class="form__item">
+        <label for="euro">Сума в євро</label>
+        <input type="number" name="euro-sum" id="euro" value="0" />
+      </div>
+      <div class="form__item">
+        <label for="dollar">Сума в доларах</label>
+        <input type="number" name="dollar-sum" id="dollar" value="0" />
+      </div>
+    </form>
+    <script src="./scripts/jsTask02.js"></script>
+  </body>
+</html>

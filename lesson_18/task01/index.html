@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+  </head>
+  <style>
+    .form {
+      width: 300px;
+    }
+    .form__item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .form__item:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  </style>
+  <body>
+    <form action="#" class="form">
+      <div class="form__item">
+        <label for="firstNumber">First Number</label>
+        <input type="number" name="number01" id="firstNumber" value="0" />
+      </div>
+      <div class="form__item">
+        <label for="secondNumber">Second Number</label>
+        <input type="number" name="number02" id="secondNumber" value="0" />
+      </div>
+      <div class="form__item">
+        <button type="button" class="form__addition-button">Додати</button>
+        <button type="button" class="form__substraction-button">Відняти</button>
+        <button type="button" class="form__multiply-button">Помножити</button>
+        <button type="button" class="form__division-button">Поділити</button>
+      </div>
+      <hr />
+      <div class="form__item">
+        <label for="result">Результат</label>
+        <input type="number" name="number-result" id="result" value="0" />
+      </div>
+    </form>
+    <script src="./scripts/jsTask01.js"></script>
+  </body>
+</html>
