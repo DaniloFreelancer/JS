@@ -6,7 +6,19 @@
     <title>Task 3</title>
   </head>
   <body>
-	<div>Вам <span id="age"></span>.</div>
-	<script src="./scripts/jsTask03.js"></script>
+    <form action="#" class="form">
+      <div class="form__item">
+        <label for="birthYear">Ваш рік народження</label>
+        <input type="number" name="birthYear" id="birthYear" value="2000" />
+      </div>
+      <button type="button" id="calculate-age">Визначити вік</button>
+      <hr />
+      <div class="form__item">
+        <label for="age">Ваш вік</label>
+        <input type="number" id="age" value="0" readonly />
+      </div>
+    </form>
+
+    <script src="./scripts/jsTask03.js"></script>
   </body>
 </html>
