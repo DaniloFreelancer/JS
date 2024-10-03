@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 4</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      td {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        border: 1px solid black;
+        cursor: pointer;
+      }
+      .highlighted {
+        border: 3px solid red;
+      }
+      .table__title {
+        font-weight: bold;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Task 4: Random Tables with Click Count</h1>
+
+    <div class="table-container">
+      <h2 class="table__title" data-clicks="0">
+        Table 1 (Clicks: <span class="click-count">0</span>)
+      </h2>
+      <table class="table">
+        <!-- Table will be filled with JS -->
+      </table>
+    </div>
+
+    <div class="table-container">
+      <h2 class="table__title" data-clicks="0">
+        Table 2 (Clicks: <span class="click-count">0</span>)
+      </h2>
+      <table class="table">
+        <!-- Table will be filled with JS -->
+      </table>
+    </div>
+
+    <div class="table-container">
+      <h2 class="table__title" data-clicks="0">
+        Table 3 (Clicks: <span class="click-count">0</span>)
+      </h2>
+      <table class="table">
+        <!-- Table will be filled with JS -->
+      </table>
+    </div>
+
+    <script src="./scripts/jsTask04.js"></script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2</title>
+  </head>
+  <style>
+	.form__item{
+		display: flex;
+		align-items: center;
+		gap: 15px;
+	}
+	.form__item input{
+		padding: 10px;
+	}
+	.form__item label{
+		font-size: 20px;
+		font-weight: 700;
+	}
+  </style>
+  <body>
+    <h1 style="display: flex; justify-content: center; align-items: center">
+      Задача 2. Дано 5 елементів input. При введенні значення у якийсь із них
+      необхідно автоматично заповнювати інші (усі попередні у спадному
+      порядку(кожен попередній має значення на 1 менше за наступний), усі
+      наступні на 1 більше (кожен наступне на 1 більше за попереднього)
+    </h1>
+    <form action="#" method="get" class="form">
+      <div class="form__item">
+        <label for="firstNumber">Value1</label>
+        <input
+          type="number"
+          name="number-01"
+          id="firstNumber"
+          class="form__input"
+          value=""
+        />
+      </div>
+      <div class="form__item">
+        <label for="secondNumber">Value2</label>
+        <input
+          type="number"
+          name="number-02"
+          id="secondNumber"
+          class="form__input"
+          value=""
+        />
+      </div>
+      <div class="form__item">
+        <label for="thirdNumber">Value3</label>
+        <input
+          type="number"
+          name="number-03"
+          id="thirdNumber"
+          class="form__input"
+          value=""
+        />
+      </div>
+      <div class="form__item">
+        <label for="fourthNumber">Value4</label>
+        <input
+          type="number"
+          name="number-04"
+          id="fourthNumber"
+          class="form__input"
+          value=""
+        />
+      </div>
+      <div class="form__item">
+        <label for="fifthNumber">Value5</label>
+        <input
+          type="number"
+          name="number-05"
+          id="fifthNumber"
+          class="form__input"
+          value=""
+        />
+      </div>
+    </form>
+	 <script src="./scripts/jsTask02.js"></script>
+  </body>
+</html>

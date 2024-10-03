@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 5</title>
+    <style>
+      .card-container {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .card {
+        border: 2px solid transparent;
+        padding: 20px;
+        width: 150px;
+        text-align: center;
+        cursor: pointer;
+        transition: border-color 0.3s ease;
+      }
+
+      .card.selected {
+        border-color: green;
+      }
+
+      .card img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .card-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      .card-price {
+        font-size: 16px;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Task 5: Product Cards</h1>
+
+    <div class="card-container">
+      <div class="card">
+        <img
+          src="https://m.media-amazon.com/images/I/61-OCRFJ96L.jpg"
+          alt="Product 1"
+        />
+        <div class="card-title">Product 1</div>
+        <div class="card-price">$10</div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://themoonstore.in/cdn/shop/files/3.png?v=1724227968"
+          alt="Product 2"
+        />
+        <div class="card-title">Product 2</div>
+        <div class="card-price">$15</div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://www.thecreativekitchen.com/wp-content/uploads/pitaya-plus-product.jpg"
+          alt="Product 3"
+        />
+        <div class="card-title">Product 3</div>
+        <div class="card-price">$20</div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://images.silpo.ua/products/1600x1600/e73e3b12-0e17-4dba-b1e9-2fb7d4c559b5.png"
+          alt="Product 4"
+        />
+        <div class="card-title">Product 4</div>
+        <div class="card-price">$25</div>
+      </div>
+    </div>
+
+    <script src="./scripts/jsTask05.js"></script>
+  </body>
+</html>

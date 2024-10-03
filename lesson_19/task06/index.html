@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 6</title>
+  </head>
+  <style>
+    .arrow {
+      cursor: pointer;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-left: 20px solid green;
+      border-bottom: 10px solid transparent;
+    }
+    .arrow-reverse {
+      cursor: pointer;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-right: 20px solid red;
+      border-bottom: 10px solid transparent;
+    }
+    .name {
+      font-size: 25px;
+    }
+    .title {
+      font-size: 30px;
+    }
+    .item {
+      border: 1px solid black;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+    }
+    .item:not(:last-child) {
+      margin-bottom: 10px;
+    }
+    .firstList__body,
+    .secondList__body {
+      padding: 15px;
+      border: 1px solid black;
+    }
+    .lists {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  </style>
+  <body>
+    <div class="lists">
+      <div class="firstList">
+        <div class="firstList__title title">Загальний список</div>
+        <div class="firstList__body">
+          <div class="firstList__item item">
+            <div class="name">John Depp</div>
+            <button class="arrow"></button>
+          </div>
+          <div class="firstList__item item">
+            <div class="name">Sara Wik</div>
+            <button class="arrow"></button>
+          </div>
+          <div class="firstList__item item">
+            <div class="name">Den Miro</div>
+            <button class="arrow"></button>
+          </div>
+          <div class="firstList__item item">
+            <div class="name">Alan Woo</div>
+            <button class="arrow"></button>
+          </div>
+        </div>
+      </div>
+      <div class="secondList">
+        <div class="secondList__title title">Обрані для змагання</div>
+        <div class="secondList__body">
+          <div class="secondList__item item">
+            <div class="name">Olga Sich</div>
+            <button class="arrow-reverse"></button>
+          </div>
+          <div class="secondList__item item">
+            <div class="name">Ivan Hal</div>
+            <button class="arrow-reverse"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="secondList"></div>
+    <script src="./scripts/jsTask06.js"></script>
+  </body>
+</html>
