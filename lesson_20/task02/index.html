@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Динамічний пошук</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+      .employee-list {
+			width: 320px;
+        margin-top: 20px;
+		  padding: 20px;
+		  border: 2px solid green;
+      }
+      .employee-list li {
+        font-size: 18px;
+        list-style-type: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Пошук працівників</h1>
+    <input type="text" id="search" placeholder="Пошук..." />
+
+    <ul class="employee-list" id="employeeList">
+      <li>Андрій Коваленко</li>
+      <li>Марія Іванова</li>
+      <li>Олександр Петренко</li>
+      <li>Наталія Гончарук</li>
+      <li>Василь Бойко</li>
+      <li>Іван Козак</li>
+      <li>Олена Сидоренко</li>
+    </ul>
+
+    <script src="./scripts/jsTask02.js"></script>
+  </body>
+</html>
