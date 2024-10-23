@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks</title>
+  </head>
+  <body>
+    <script>
+      // Задача 1. Дано масив рядків. Вивести ті, у яких є цифри (використати метод test та регулярні вирази).
+      const arr = ["hello123", "world", "test2023", "noDigits"];
+      let hasDigits = /\d/g;
+      let result = hasDigits.test(arr);
+      console.log("Перше завдання:", result);
+      // Задача 2. Дано масив рядків. Вивести ті, у яких немає цифр.
+      let noDigits = /\D/g;
+      let result1 = noDigits.test(arr);
+      console.log("Друге завдання:", result1);
+      // Задача 3. Дано масив рядків. Вивести ті, у яких є голосні літери.
+      const arr3 = ["test", "try", "sky", "apple"];
+      let hasVowels = /[aeiouAEIOU]/g;
+      let result2 = hasVowels.test(arr3);
+      console.log("Третє завдання:", result2);
+      //Задача 4. Дано масив рядків. Вивести ті, у яких немає голосних літер.
+      let noVowels = /[^aeiouAEIOU]/g;
+      let result3 = noVowels.test(arr3);
+      console.log("Четверте завдання:", result3);
+      //Задача 5. Дано масив рядків. Вивести ті, у яких є або цифра 1 або цифра 3
+      const arr5 = ["hello1", "world3", "test2", "noDigits"];
+      let has1or3 = /(1 | 3)/g;
+      let result4 = has1or3.test(arr5);
+      console.log("П'яте завдання:", result4);
+      //Задача 6. Дано рядок тексту, вивести усі числа, які є у тексті.
+      const text = "There are 123 apples, 45 oranges, and 678 bananas.";
+      let numbers = text.match(/\d+/g);
+      console.log("Шосте завдання:", numbers);
+      //Задача 7. Дано рядок тексту. Знайти усі знаки пунктуації, які були використано.
+      const text2 = "Hello, world! How are you?";
+      let punctuation = text2.match(/[.,!?;:]/g);
+      console.log("Сьоме завдання:", punctuation);
+      //Задача 8. Дано рядок тексту. Вивести усі складові, які розділені розділовими знаками.
+      const text3 = "Apple, orange; banana! grape.";
+      let parts = /[.,!?;:]/;
+      let result7 = text3.split(parts);
+      console.log("Восьме завдання:", result7);
+      //Задача 9. Дано рядок тексту. Перевірити, чи містить він дату у форматі dd.mm.yyyy (dd- день, mm- місяць, yyyy- рік).
+      const text4 = "Today is 12.05.2023.";
+      let datePattern = /\d{2}.\d{2}.\d{4}/;
+      let result8 = datePattern.test(text4);
+      console.log("Дев'яте завдання:", result8);
+      //Задача 10. Дано рядок тексту. Підрахувати кількість двоцифрових чисел у рядку.
+      const text5 = "I have 10 apples, 23 oranges, and 5 bananas.";
+      let doubleDigits = text5.match(/\d{2}/);
+      console.log("Десяте завдання:", doubleDigits);
+      //Задача 11. Визначити чи може бути рядок тексту номером банківської картки (приклад: «4142-3433-2323-3434»). Знайти усі такі номери.
+      const text6 =
+        "My card is 4142-3433-2323-3434 and another is 1234-5678-9101-1121.";
+      let cardNumbers = text6.match(/\d{4}-\d{4}-\d{4}-\d{4}/);
+      console.log("Одинадцяте завдання:", cardNumbers);
+      //Задача 12. Дано адресу сайту. Визначити, чи є він урядовим (містить домен “gov”)
+      const websites = ["example.com", "gov.ua", "example.gov"];
+      let govSites = /.gov/;
+      let result11 = govSites.test(websites);
+      console.log("Дванадцяте завдання:", result11);
+      //Задача 13. Вибрати усі роки після 2021 року з отриманого повідомлення
+      const text7 = "Events in 2019, 2022, and 2025 were significant.";
+      const yearsAfter2021 = text7.match(/\b(20[2-9]\d)\b/g);
+      console.log("Тринадцяте завдання: ", yearsAfter2021);
+      //Задача 14. Дано номер телефону. Перевірити, чи є цей телефон телефоном з України (починаєтсья на «+38»)
+      const phones = ["+380991234567", "+123456789", "+380673456789"];
+      const ukrainianPhones = /^\+38/;
+      const result13 = ukrainianPhones.test(phones);
+      console.log("Чотирнадцяте завдання:", result13);
+      //Задача 15. Користувач вводить прізвище та ім’я в одному рядку через пробіл.  Замінити пробіл на дефіс.
+      const name = "Іван Петренко";
+      const formattedName = name.replace(" ", "-");
+      console.log("П'ятнадцяте завдання:", formattedName);
+      //Задача 16. Користувач вводить дату у форматі «день.місяць.рік». Отримати рядкове представлення дати у форматі «день/місяць/рік»
+      const userInput = "22.10.2024";
+      console.log(userInput.replaceAll(".", "/"));
+      //Задача 17. Користувач вводить день (номер дня (0-6) або «sun,mon,tue,wed,thu,fri,sat»).
+      //Визначити, чи  є це день вихідним
+      function isWeekend(input) {
+        // Мапа днів тижня до їхніх номерів
+        const days = {
+          sun: 0,
+          mon: 1,
+          tue: 2,
+          wed: 3,
+          thu: 4,
+          fri: 5,
+          sat: 6,
+        };
+
+        // Якщо введено номер дня
+        if (typeof input === "number") {
+          return input === 0 || input === 6;
+        }
+
+        // Якщо введено назву дня (маленькими літерами)
+        input = input.toLowerCase();
+
+        //якщо ввести "sun",то const dayNumber = days["sun"] -> (0)
+        const dayNumber = days[input];
+
+        if (dayNumber !== undefined) {
+          return dayNumber === 0 || dayNumber === 6;
+        } else {
+          return false; // Некоректне введення
+        }
+      }
+
+      console.log(isWeekend(6)); // true (субота)
+      console.log(isWeekend(3)); // false (середа)
+      console.log(isWeekend("sun")); // true (неділя)
+      console.log(isWeekend("wed")); // false (середа)
+    </script>
+  </body>
+</html>

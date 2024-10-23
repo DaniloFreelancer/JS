@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage</title>
+  </head>
+  <body>
+    <h1>Виберіть колір фону</h1>
+    <input type="color" id="colorPicker" />
+    <p>Кількість змін фону за сеанс: <span id="changeCount">0</span></p>
+
+    <script>
+      localStorage.removeItem("bg");
+      // Отримуємо елементи
+      const colorPicker = document.getElementById("colorPicker");
+      const changeCountDisplay = document.getElementById("changeCount");
+
+      // Встановлюємо початковий колір фону з LocalStorage, якщо він є
+		// Дасть значення поточного ключа, наприклад #000000
+      const savedColor = localStorage.getItem("backgroundColor");
+      if (savedColor) {
+        document.body.style.backgroundColor = savedColor;
+        colorPicker.value = savedColor;
+      }
+
+      //Встановлюємо лічильник змін з SessionStorage
+      let changeCount = parseInt(sessionStorage.getItem("changeCount")) || 0;
+      changeCountDisplay.textContent = changeCount;
+
+      // Коли користувач обирає новий колір
+      colorPicker.addEventListener("input", () => {
+        const selectedColor = colorPicker.value;
+
+        // Змінюємо колір фону сторінки
+        document.body.style.backgroundColor = selectedColor;
+
+        // Зберігаємо новий колір в LocalStorage
+        localStorage.setItem("backgroundColor", selectedColor);
+
+        // Збільшуємо лічильник змін
+        changeCount++;
+        sessionStorage.setItem("changeCount", changeCount);
+        changeCountDisplay.textContent = changeCount;
+      });
+    </script>
+  </body>
+</html>

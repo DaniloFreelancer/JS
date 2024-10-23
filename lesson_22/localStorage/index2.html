@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>local Storage</title>
+  </head>
+  <body>
+    <h1>Список справ</h1>
+    <input type="text" id="newTask" placeholder="Нова справа" />
+    <button id="addTask">Додати</button>
+
+    <ul id="taskList"></ul>
+    <script>
+      // Отримуємо посилання на HTML елементи
+      const newTaskInput = document.getElementById("newTask");
+      const addTaskButton = document.getElementById("addTask");
+      const taskListElement = document.getElementById("taskList");
+
+      // Завантажуємо список справ з localStorage
+		//якщо такого елементу як tasks немає, створюється пустий масив
+      let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+      // Функція для оновлення відображення списку справ
+      function updateTaskList() {
+        taskListElement.innerHTML = ""; // Очищаємо поточний список
+        tasks.forEach((task, index) => {
+          const li = document.createElement("li");
+          li.textContent = task;
+          taskListElement.append(li);
+        });
+      }
+
+      // Функція для збереження списку у localStorage
+      function saveTasks() {
+			// Перетворює елементи в строку(рядок)
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+      }
+
+      // Додаємо нову справу
+      addTaskButton.addEventListener("click", () => {
+        const newTask = newTaskInput.value.trim(); // видаляє пробіли
+        if (newTask) {
+          tasks.push(newTask);
+          newTaskInput.value = ""; // Очищаємо поле вводу
+          saveTasks(); // Зберігаємо список у localStorage
+          updateTaskList(); // Оновлюємо відображення списку
+        }
+      });
+
+      // Випадковий вибір справи і її видалення при підтвердженні
+      function chooseRandomTask() {
+        if (tasks.length === 0) {
+          return; // Якщо справ немає, нічого не робимо
+        }
+        const randomIndex = Math.floor(Math.random() * tasks.length);
+        const chosenTask = tasks[randomIndex];
+
+        // Виводимо справу через confirm
+        if (confirm(`Виконайте цю справу: "${chosenTask}"?`)) {
+          tasks.splice(randomIndex, 1); // Видаляємо справу
+          saveTasks(); // Оновлюємо список у localStorage
+          updateTaskList(); // Оновлюємо відображення списку
+        }
+      }
+
+      // Запускаємо випадковий вибір справи кожні 30 секунд
+      setInterval(chooseRandomTask, 30000); // 30 000 мс = 30 секунд
+
+      // Показуємо список справ при завантаженні сторінки
+      updateTaskList();
+    </script>
+  </body>
+</html>
