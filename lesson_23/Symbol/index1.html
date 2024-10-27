@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Symbol</title>
+  </head>
+  <body>
+    <script>
+      alert(`Розв'язання в консолі!`);
+
+      //Задача 1. Дано клас PhoneNumber. Створити функцію перетворення до string, при якому на основі номера виводиться оператор (050….  🡪 MTC, 096… 🡪 Kyivstar, ….)
+
+      console.log(`=====================Задача 1=====================`);
+
+      class PhoneNumber {
+        constructor(number) {
+          this.number = number;
+        }
+
+        //Опис об'єкта
+        get [Symbol.toStringTag]() {
+          if (/^050|066|095/.test(this.number)) {
+            return "MTC";
+          } else if (/^096|067/.test(this.number)) {
+            return "Kyivstar";
+          } else if (/^063/.test(this.number)) {
+            return "Lifecell";
+          } else {
+            return "Невідомий оператор";
+          }
+        }
+      }
+
+      const phone1 = new PhoneNumber("0501234567");
+      console.log(Object.prototype.toString.call(phone1));
+
+      const phone2 = new PhoneNumber("0961234567");
+      console.log(Object.prototype.toString.call(phone2));
+
+      const phone3 = new PhoneNumber("0631234567");
+      console.log(Object.prototype.toString.call(phone3));
+
+      const phone4 = new PhoneNumber("0991234567");
+      console.log(Object.prototype.toString.call(phone4));
+
+      //Задача 2. Дано Shop  -- клас, що містить список товарів (масив об’єктів класу Product (назва, ціна, кількість одиниць). Додати можливість ітератора до класу Shop, щоб при ітеруванні для кожного елемента виводився рядок «товар-загальна вартість»
+
+      console.log(`=====================Задача 2=====================`);
+
+      class Product {
+        constructor(name, price, amount) {
+          this.name = name;
+          this.price = price;
+          this.amount = amount;
+        }
+      }
+
+      class Shop {
+        constructor() {
+          this.products = [];
+        }
+        addProduct(product) {
+          this.products.push(product);
+        }
+        *[Symbol.iterator]() {
+          for (let i = 0; i < this.products.length; i++) {
+            let product = this.products[i];
+            yield `Товар ${product.name} має загальну вартість ${
+              product.price * product.amount
+            } грн.`;
+          }
+        }
+      }
+
+      let shop = new Shop();
+
+      shop.addProduct(new Product("Apple", 20, 2));
+      shop.addProduct(new Product("Banana", 1.5, 10));
+      shop.addProduct(new Product("Orange", 3, 7));
+
+      // Shop містить масив з елементами, які вказано вище
+      for (const item of shop) {
+        console.log(item);
+      }
+
+      //Задача 3. Створити генератор, який би випадковим чином поступово генерував вказану кількість парних чисел.
+
+      console.log(`=====================Задача 3=====================`);
+
+      function* generateEvenNumber(specifiedQuantity) {
+        for (let i = 1; i <= specifiedQuantity; i++) {
+          let randomEven = Math.floor(Math.random() * 100) * 2;
+          yield `Число ${i} - ${randomEven}.`;
+        }
+      }
+
+      const generator = generateEvenNumber(5);
+
+      // console.log(generator);
+
+      // Виведення кожного елемента генератора
+      for (const el of generator) {
+        console.log(el);
+      }
+
+      //Виведення масиву з елементів генератора
+      // console.log([...generator]);
+    </script>
+  </body>
+</html>
